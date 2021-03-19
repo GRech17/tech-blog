@@ -23,20 +23,6 @@ async function loginFormHandler(event) {
 };
 
 
-async function logout() {
-    const response = await fetch('/api/users/logout', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' }
-    });
-  
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert(response.statusText);
-    }
-};
-
-
 async function signupFormHandler(event) {
     event.preventDefault();
 
@@ -66,6 +52,6 @@ async function signupFormHandler(event) {
 };
 
 
-document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
-document.querySelector('#logout').addEventListener('click', logout);
-document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
