@@ -88,7 +88,7 @@ router.get('/post/:id', (req, res) => {
         });
 });
 
-router.get('/posts-comments', (req, res) => {
+router.get('/post-comments', (req, res) => {
     Post.findOne({
             where: {
                 id: req.params.id
@@ -120,7 +120,7 @@ router.get('/posts-comments', (req, res) => {
             }
             const post = dbPostData.get({ plain: true });
 
-            res.render('posts-comments', { post, loggedIn: req.session.loggedIn });
+            res.render('post-comments', { post, loggedIn: req.session.loggedIn });
         })
         .catch(err => {
             console.log(err);
